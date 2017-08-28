@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 na. All rights reserved.
 //
 
+#import "CALayer+Exception.h"
 #import "SVGGradientLayer.h"
 
 @implementation SVGGradientLayer
@@ -75,7 +76,17 @@
     } 
     else if (!CGRectIsEmpty(self.bounds)) {
     
-        [super renderInContext:ctx];
+        @try {
+            [super renderInContext:ctx];
+        }
+        @catch (NSException *e) {
+            if ([self handleException:e]) {
+                [self renderInContext:ctx];
+            }
+            else {
+                @throw e;
+            }
+        }
     }
     CGContextRestoreGState(ctx);
 }

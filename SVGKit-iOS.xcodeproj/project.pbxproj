@@ -10,6 +10,12 @@
 		00E86D7417415AA000F0FA0A /* SVGKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E86D7317415AA000F0FA0A /* SVGKit.m */; };
 		036A524C16E87693008C1140 /* NSCharacterSet+SVGKExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 036A524A16E87693008C1140 /* NSCharacterSet+SVGKExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		036A524D16E87693008C1140 /* NSCharacterSet+SVGKExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 036A524B16E87693008C1140 /* NSCharacterSet+SVGKExtensions.m */; };
+		309ED86A1F549A9000E4FB85 /* CALayer+Exception.h in Headers */ = {isa = PBXBuildFile; fileRef = 309ED8681F549A9000E4FB85 /* CALayer+Exception.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		309ED86B1F549A9000E4FB85 /* CALayer+Exception.h in Headers */ = {isa = PBXBuildFile; fileRef = 309ED8681F549A9000E4FB85 /* CALayer+Exception.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		309ED86C1F549A9000E4FB85 /* CALayer+Exception.h in Headers */ = {isa = PBXBuildFile; fileRef = 309ED8681F549A9000E4FB85 /* CALayer+Exception.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		309ED86D1F549A9000E4FB85 /* CALayer+Exception.m in Sources */ = {isa = PBXBuildFile; fileRef = 309ED8691F549A9000E4FB85 /* CALayer+Exception.m */; };
+		309ED86E1F549A9000E4FB85 /* CALayer+Exception.m in Sources */ = {isa = PBXBuildFile; fileRef = 309ED8691F549A9000E4FB85 /* CALayer+Exception.m */; };
+		309ED86F1F549A9000E4FB85 /* CALayer+Exception.m in Sources */ = {isa = PBXBuildFile; fileRef = 309ED8691F549A9000E4FB85 /* CALayer+Exception.m */; };
 		4FD821F01AC69F6600E419D3 /* SVGSwitchElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FD821EE1AC69F6600E419D3 /* SVGSwitchElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FD821F11AC69F6600E419D3 /* SVGSwitchElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD821EF1AC69F6600E419D3 /* SVGSwitchElement.m */; };
 		55452BF719EC68A200B75A30 /* libSVGKit-iOS.2.0.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6639618E16145D0400E58CCA /* libSVGKit-iOS.2.0.0.a */; };
@@ -761,6 +767,8 @@
 		00E86D7317415AA000F0FA0A /* SVGKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVGKit.m; sourceTree = "<group>"; };
 		036A524A16E87693008C1140 /* NSCharacterSet+SVGKExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCharacterSet+SVGKExtensions.h"; sourceTree = "<group>"; };
 		036A524B16E87693008C1140 /* NSCharacterSet+SVGKExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "NSCharacterSet+SVGKExtensions.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		309ED8681F549A9000E4FB85 /* CALayer+Exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Exception.h"; sourceTree = "<group>"; };
+		309ED8691F549A9000E4FB85 /* CALayer+Exception.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Exception.m"; sourceTree = "<group>"; };
 		4FD821EE1AC69F6600E419D3 /* SVGSwitchElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVGSwitchElement.h; sourceTree = "<group>"; };
 		4FD821EF1AC69F6600E419D3 /* SVGSwitchElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVGSwitchElement.m; sourceTree = "<group>"; };
 		55452BF119EC68A200B75A30 /* SVGKit-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SVGKit-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1568,6 +1576,8 @@
 				66E863891688C2770059C9C4 /* CGPathAdditions.m */,
 				66E8638A1688C2780059C9C4 /* SVGKLayer.h */,
 				66E8638B1688C2780059C9C4 /* SVGKLayer.m */,
+				309ED8681F549A9000E4FB85 /* CALayer+Exception.h */,
+				309ED8691F549A9000E4FB85 /* CALayer+Exception.m */,
 			);
 			path = "QuartzCore additions";
 			sourceTree = "<group>";
@@ -1721,6 +1731,7 @@
 				661ADBF216CC2FBE006F4BC3 /* SVGTextPositioningElement.h in Headers */,
 				661ADBF716CC2FCA006F4BC3 /* SVGTextContentElement.h in Headers */,
 				661ADBFC16CC364F006F4BC3 /* SVGTextPositioningElement_Mutable.h in Headers */,
+				309ED86A1F549A9000E4FB85 /* CALayer+Exception.h in Headers */,
 				661AE44916D13DA8005E69D9 /* SVGTransformable.h in Headers */,
 				661AE44A16D13DAD005E69D9 /* SVGFitToViewBox.h in Headers */,
 				036A524C16E87693008C1140 /* NSCharacterSet+SVGKExtensions.h in Headers */,
@@ -1842,6 +1853,7 @@
 				825CDB561BDA5060003C1C12 /* SVGKExporterUIImage.h in Headers */,
 				825CDB571BDA5060003C1C12 /* SVGKSourceLocalFile.h in Headers */,
 				825CDB581BDA5061003C1C12 /* SVGKSourceNSData.h in Headers */,
+				309ED86B1F549A9000E4FB85 /* CALayer+Exception.h in Headers */,
 				825CDB591BDA5061003C1C12 /* SVGKSourceString.h in Headers */,
 				825CDB5A1BDA5061003C1C12 /* SVGKSourceURL.h in Headers */,
 				825CDB5B1BDA5061003C1C12 /* SVGKParserDefsAndUse.h in Headers */,
@@ -1979,6 +1991,7 @@
 				825CDBD51BDA50BB003C1C12 /* SVGKExporterNSData.h in Headers */,
 				825CDBD61BDA50BC003C1C12 /* SVGKExporterUIImage.h in Headers */,
 				825CDBD71BDA50BC003C1C12 /* SVGKSourceLocalFile.h in Headers */,
+				309ED86C1F549A9000E4FB85 /* CALayer+Exception.h in Headers */,
 				825CDBD81BDA50BC003C1C12 /* SVGKSourceNSData.h in Headers */,
 				825CDBD91BDA50BC003C1C12 /* SVGKSourceString.h in Headers */,
 				825CDBDA1BDA50BD003C1C12 /* SVGKSourceURL.h in Headers */,
@@ -2261,6 +2274,7 @@
 				BD4C56DD199D55CC00AF04AD /* CAShapeLayerWithClipRender.m in Sources */,
 				66E863BF1688C2780059C9C4 /* ProcessingInstruction.m in Sources */,
 				66E863C11688C2780059C9C4 /* Text.m in Sources */,
+				309ED86D1F549A9000E4FB85 /* CALayer+Exception.m in Sources */,
 				66E863C31688C2780059C9C4 /* SVGAngle.m in Sources */,
 				66E863C51688C2780059C9C4 /* SVGDefsElement.m in Sources */,
 				66E863C71688C2780059C9C4 /* SVGDocument.m in Sources */,
@@ -2368,6 +2382,7 @@
 				825CDC061BDA511C003C1C12 /* StyleSheet.m in Sources */,
 				825CDC071BDA511C003C1C12 /* MediaList.m in Sources */,
 				825CDC081BDA511C003C1C12 /* DocumentFragment.m in Sources */,
+				309ED86E1F549A9000E4FB85 /* CALayer+Exception.m in Sources */,
 				825CDC091BDA511C003C1C12 /* DocumentType.m in Sources */,
 				825CDC0A1BDA511C003C1C12 /* DOMHelperUtilities.m in Sources */,
 				825CDC0B1BDA511C003C1C12 /* Element.m in Sources */,
@@ -2483,6 +2498,7 @@
 				825CDC6A1BDA5144003C1C12 /* StyleSheet.m in Sources */,
 				825CDC6B1BDA5144003C1C12 /* MediaList.m in Sources */,
 				825CDC6C1BDA5144003C1C12 /* DocumentFragment.m in Sources */,
+				309ED86F1F549A9000E4FB85 /* CALayer+Exception.m in Sources */,
 				825CDC6D1BDA5144003C1C12 /* DocumentType.m in Sources */,
 				825CDC6E1BDA5144003C1C12 /* DOMHelperUtilities.m in Sources */,
 				825CDC6F1BDA5144003C1C12 /* Element.m in Sources */,

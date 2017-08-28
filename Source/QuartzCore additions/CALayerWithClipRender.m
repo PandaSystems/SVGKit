@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 na. All rights reserved.
 //
 
+#import "CALayer+Exception.h"
 #import "CALayerWithClipRender.h"
 
 #if TARGET_OS_IPHONE
@@ -23,7 +24,17 @@
         self.mask = nil;
     }
     
-    [super renderInContext:ctx];
+    @try {
+        [super renderInContext:ctx];
+    }
+    @catch (NSException *e) {
+        if ([self handleException:e]) {
+            [self renderInContext:ctx];
+        }
+        else {
+            @throw e;
+        }
+    }
     
     if( mask != nil ) {
         self.mask = mask;
