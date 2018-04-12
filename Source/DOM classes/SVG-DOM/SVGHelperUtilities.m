@@ -485,37 +485,42 @@
 	
 	NSString* actualFill = [svgElement cascadedValueForStylableProperty:@"fill"];
 	NSString* actualFillOpacity = [svgElement cascadedValueForStylableProperty:@"fill-opacity"];
-	
-	if ( [actualFill hasPrefix:@"url"] )
-	{
-		NSRange idKeyRange = NSMakeRange(5, actualFill.length - 6);
-		NSString* fillId = [actualFill substringWithRange:idKeyRange];
-		
-		/** Replace the return layer with a special layer using the URL fill */
-		/** fetch the fill layer by URL using the DOM */
-		SVGGradientLayer *gradientLayer = [self getGradientLayerWithId:fillId forElement:svgElement withRect:fillLayer.frame
-										   transform:transformAbsolute];
-		
-		CAShapeLayer* maskLayer = [CAShapeLayer layer];
-		maskLayer.frame = localRect;
-		maskLayer.path = fillLayer.path;
-		maskLayer.fillColor = [UIColor blackColor].CGColor;
-		maskLayer.strokeColor = nil;
-		gradientLayer.mask = maskLayer;
-		if ( [gradientLayer.type isEqualToString:kExt_CAGradientLayerRadial])
-			gradientLayer.maskPath = fillLayer.path;
-		gradientLayer.frame = fillLayer.frame;
-		fillLayer = (CAShapeLayer* )gradientLayer;
-	}
-	else if( actualFill.length > 0 || actualFillOpacity.length > 0 )
-	{
-		fillLayer.fillColor = [self parseFillForElement:svgElement fromFill:actualFill andOpacity:actualFillOpacity];
-	}
-	CGPathRelease(pathToPlaceInLayer);
-	
-	NSString* actualOpacity = [svgElement cascadedValueForStylableProperty:@"opacity" inherit:NO];
-	fillLayer.opacity = actualOpacity.length > 0 ? [actualOpacity floatValue] : 1; // unusually, the "opacity" attribute defaults to 1, not 0
-
+    CGFloat fillOpacity = 1.0;
+    
+    if ( [actualFill hasPrefix:@"url"] )
+    {
+        NSRange idKeyRange = NSMakeRange(5, actualFill.length - 6);
+        NSString* fillId = [actualFill substringWithRange:idKeyRange];
+        
+        /** Replace the return layer with a special layer using the URL fill */
+        /** fetch the fill layer by URL using the DOM */
+        SVGGradientLayer *gradientLayer = [self getGradientLayerWithId:fillId forElement:svgElement withRect:fillLayer.frame
+                                                             transform:transformAbsolute];
+        
+        CAShapeLayer* maskLayer = [CAShapeLayer layer];
+        maskLayer.frame = localRect;
+        maskLayer.path = fillLayer.path;
+        maskLayer.fillColor = [UIColor blackColor].CGColor;
+        maskLayer.strokeColor = nil;
+        gradientLayer.mask = maskLayer;
+        if ( [gradientLayer.type isEqualToString:kExt_CAGradientLayerRadial])
+            gradientLayer.maskPath = fillLayer.path;
+        gradientLayer.frame = fillLayer.frame;
+        fillLayer = (CAShapeLayer* )gradientLayer;
+        
+        if (actualFillOpacity.length > 0) {
+            fillOpacity = actualFillOpacity.floatValue;
+        }
+    }
+    else if( actualFill.length > 0 || actualFillOpacity.length > 0 )
+    {
+        fillLayer.fillColor = [self parseFillForElement:svgElement fromFill:actualFill andOpacity:actualFillOpacity];
+    }
+    CGPathRelease(pathToPlaceInLayer);
+    
+    NSString *actualOpacity = [svgElement cascadedValueForStylableProperty:@"opacity" inherit:NO];
+    fillLayer.opacity = (actualOpacity.length > 0 ? actualOpacity.floatValue : 1.0) * fillOpacity;
+    
 	if (strokeLayer == fillLayer)
 	{
 		return strokeLayer;
